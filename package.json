@@ -1,5 +1,5 @@
 {
-  "name": "data-streamer",
+  "name": "appium-data-streamer-plugin",
   "version": "0.1.0",
   "type": "module",
   "main": "./lib/plugin.js",

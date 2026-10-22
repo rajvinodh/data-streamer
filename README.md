@@ -13,7 +13,7 @@ notes and [diagrams/](diagrams/) for sequence/latency diagrams.
 From npm:
 
 ```bash
-appium plugin install --source=npm appium-data-streamer-plugin
+appium plugin install --source=npm data-streamer
 ```
 
 From source:

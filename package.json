@@ -1,5 +1,5 @@
 {
-  "name": "@phonepe/appium-data-streamer",
+  "name": "appium-data-streamer-plugin",
   "version": "0.1.0",
   "type": "module",
   "main": "./lib/plugin.js",
@@ -26,6 +26,14 @@
   ],
   "author": "Vinodh Raj R",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajvinodh/data-streamer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rajvinodh/data-streamer/issues"
+  },
+  "homepage": "https://github.com/rajvinodh/data-streamer#readme",
   "description": "Appium plugin to collect element text data over time via start/stop commands",
   "peerDependencies": {
     "appium": "^3.1.2"

@@ -1,0 +1,70 @@
+{
+  "name": "@phonepe/appium-data-streamer",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./lib/plugin.js",
+  "types": "./lib/plugin.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf lib coverage",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src",
+    "install:local": "npm run build && appium plugin install --source=local ."
+  },
+  "keywords": [
+    "appium",
+    "appium-plugin",
+    "automation",
+    "testing",
+    "mobile",
+    "data-streamer",
+    "text-collection"
+  ],
+  "author": "Vinodh Raj R",
+  "license": "MIT",
+  "description": "Appium plugin to collect element text data over time via start/stop commands",
+  "peerDependencies": {
+    "appium": "^3.1.2"
+  },
+  "dependencies": {
+    "@appium/base-plugin": "^3.0.5",
+    "@appium/support": "^7.0.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@types/ws": "^8.5.13",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.9.3"
+  },
+  "appium": {
+    "pluginName": "data-streamer",
+    "mainClass": "DataStreamerPlugin",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema",
+      "type": "object",
+      "properties": {
+        "default-interval-ms": {
+          "type": "integer",
+          "minimum": 50,
+          "maximum": 60000,
+          "default": 500,
+          "description": "Default polling interval in milliseconds for getText collection"
+        },
+        "max-duration-ms": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 3600000,
+          "default": 300000,
+          "description": "Maximum duration a text collection can run before auto-stopping"
+        }
+      }
+    }
+  }
+}
